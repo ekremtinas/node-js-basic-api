@@ -2,10 +2,11 @@ const express = require('express');
 const app=express();
 const bodyParser = require("body-parser");
 const db = require('./config/database');
+const cors = require('cors');
 require('dotenv').config();
 
-
-app.use(bodyParser.urlencoded({     extended:true})); 
+app.use(bodyParser.urlencoded({  extended:true})); 
+app.use(cors());
 
 
 require('./router/routerManager')(app);
